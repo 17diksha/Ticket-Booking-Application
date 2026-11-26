@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Concerts in Town ">
+        <div style="height : 300px">
+            <lightning-datatable key-field="Id"
+                                    data={Concertdata}
+                                    columns={columns}>
+
+            </lightning-datatable>
+        </div>
+        <lightning-button variant="brand" class="slds-button slds-align_absolute-center "
+            onclick={navToTicketBookingComp} label="Book Ticket">
+
+        </lightning-button>
+    </lightning-card>
+</template>

@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="Ticket Booking Application">
+        <lightning-record-edit-form object-api-name="Ticket__c"
+                                    onsuccess={handleSuccess}>
+        <lightning-input-field field-name="Concert__c" onchange={handleChange}></lightning-input-field>
+        <lightning-input-field field-name="Price__c" value={showPrice}></lightning-input-field>
+        <lightning-input-field field-name="Individuals__c" ></lightning-input-field>
+
+        <lightning-button variant="success" label="Save" type="Submit"></lightning-button>
+
+
+        </lightning-record-edit-form>
+
+    </lightning-card>
+    
+    <!-- Modal popup-start -->
+    <template if:true={showModal}>
+        <div role="dialog" aria-modal="true" aria-labelledby="modal-heading-01"
+             class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <button class="slds-button slds-button_icon slds-modal__close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close" alternative-text="close"
+                                    size="large" title="close"></lightning-icon>
+                </button>
+
+                <div class="slds-modal__header">
+                    <h1 class="slds-modal__title slds-hyphenate">Ticket Information</h1>
+                </div>
+
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-record-view-form
+                        object-api-name="Ticket__c"
+                        record-id={recordId}>
+                        <lightning-output-field field-name="Concert__c"></lightning-output-field>
+                        <lightning-output-field field-name="Price__c"></lightning-output-field>
+                        <lightning-output-field field-name="Individuals__c"></lightning-output-field>
+                    </lightning-record-view-form>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+    <!-- ModalPopup-ends -->
+
+</template>
