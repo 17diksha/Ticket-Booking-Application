@@ -26,7 +26,9 @@ Apex, SOQL, Lightning Web Components (LWC), Salesforce Developer Edition, VS Cod
 - `force-app/main/default/objects`: custom objects and fields
 
 ## Screenshots
-[Add 2 or 3 screenshots: the concert listing, the booking form, the confirmation modal]
+![TicketBooking1](TicketBooking1.png)
+
+![TicketBooking2](TicketBooking2.png)
 
 ## How to Run
 1. Clone this repository.
